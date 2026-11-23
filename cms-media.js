@@ -11,6 +11,10 @@ function asecorApplyImageSettings(root){
    const align=['left','center','right'].includes(setting.alineacion)?setting.alineacion:'center';
    fig.classList.remove('size-small','size-medium','size-large','align-left','align-center','align-right');
    fig.classList.add('size-'+size,'align-'+align);
+   // Aplicar alineación explícita para evitar discrepancias de estilos.
+   fig.style.setProperty('margin-left',align==='left'?'0':'auto','important');
+   fig.style.setProperty('margin-right',align==='right'?'0':'auto','important');
+   fig.style.setProperty('width',size==='small'?'min(100%, 280px)':size==='medium'?'min(100%, 520px)':'100%','important');
   });
  });
 }
