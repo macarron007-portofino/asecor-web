@@ -49,7 +49,10 @@ content:
         required: true
         description: Usa solo letras minúsculas, números y guiones. Ejemplo: prueba-1313.
         pattern:
-          regex: '^[a-z0-9]+(-[a-z0-9]+)*        label: Título
+          regex: '^[a-z0-9]+(-[a-z0-9]+)*$'
+          message: 'Solo minúsculas, números y guiones.'
+      - name: titulo
+        label: Título
         type: string
         required: true
       - name: resumen
