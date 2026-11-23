@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vista previa | ASECOR</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:15px system-ui,sans-serif;background:#f2f3f5;color:#222}header{background:#fff;border-bottom:1px solid #ddd;padding:12px 20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}h1{font-size:18px;margin:0 20px 0 0;color:#a70f1b}select,button,a.control{font:inherit;padding:9px 12px;border:1px solid #bbb;border-radius:6px;background:white;color:#222}button{cursor:pointer}a.control{text-decoration:none}button:hover,a.control:hover{border-color:#a70f1b}#status{font-size:12px;color:#555}main{padding:16px;display:flex;justify-content:center}iframe{background:white;border:1px solid #ccc;box-shadow:0 3px 14px #0001;width:100%;height:calc(100vh - 135px);min-height:520px}main.mobile iframe{width:390px;max-width:100%}.hint{padding:0 20px 12px;color:#555;font-size:13px}
+</style></head><body><header><h1>ASECOR · Vista previa</h1><label for="page">Página:</label><select id="page"></select><button id="desktop">Ordenador</button><button id="mobile">Móvil</button><button id="refresh">Actualizar vista</button><a class="control" id="edit" target="_blank" rel="noopener noreferrer">Editar en Pages CMS</a><span id="status" role="status"></span></header><div class="hint">Muestra el diseño real de la web con los últimos cambios guardados y publicados. No refleja cambios sin guardar en Pages CMS.</div><main id="frame-wrap"><iframe id="preview" title="Vista previa de la página de ASECOR"></iframe></main>
+<script>
+const repo='macarron007-portofino/asecor-web';
+const base='https://app.pagescms.org/'+repo+'/main/file/';
+const originals=[['index','Inicio'],['asociacion','La asociación'],['historia','Historia'],['agentes-de-salud','Agentes de Salud'],['educacion-sanitaria','Educación sanitaria'],['apoyo-psicologico','Apoyo psicológico'],['voluntariado','Voluntariado'],['resultados','Resultados'],['documentacion','Documentación'],['contacto','Contacto']];
+const sel=document.getElementById('page'),frame=document.getElementById('preview'),edit=document.getElementById('edit'),status=document.getElementById('status');
+for(const [slug,title] of originals){const o=new Option(title,slug);sel.add(o)}
+const originalSlugs=new Set(originals.map(x=>x[0]));
+async function loadExtras(){try{const r=await fetch('content/paginas.json',{cache:'no-store'});if(!r.ok)return;const pages=await r.json();for(const p of pages){if(p&&p.publicada===true&&/^[a-z0-9-]+$/.test(p.slug)){sel.add(new Option('Adicional: '+p.titulo,'extra:'+p.slug))}}}catch(e){}}
+function update(){const value=sel.value;const extra=value.startsWith('extra:');const slug=extra?value.slice(6):value;if(!extra&&!originalSlugs.has(slug))return;const url=extra?'pagina.html?id='+encodeURIComponent(slug):slug+'.html';frame.src=url+(url.includes('?')?'&':'?')+'preview='+Date.now();edit.href=base+(extra?'paginas':'original_'+slug.replace(/-/g,'_'));status.textContent='Cargando…';}
+frame.addEventListener('load',()=>{status.textContent='Vista cargada · últimos cambios publicados'});
+sel.addEventListener('change',update);
+document.getElementById('refresh').addEventListener('click',update);
+document.getElementById('mobile').addEventListener('click',()=>document.getElementById('frame-wrap').classList.add('mobile'));
+document.getElementById('desktop').addEventListener('click',()=>document.getElementById('frame-wrap').classList.remove('mobile'));
+(async()=>{await loadExtras();const requested=new URLSearchParams(location.search).get('page');if(requested&&[...sel.options].some(x=>x.value===requested))sel.value=requested;else sel.value='historia';update()})();
+</script></body></html>
