@@ -15,7 +15,7 @@ document.getElementById('menu-button')?.addEventListener('click',function(){cons
   }
   if(typeof data.texto!=='string')return;
   const wrapper=window.AsecorMedia.render(data.texto);
-  if(typeof data.imagen==='string'&&/^\/?assets\/uploads\/[a-zA-Z0-9_./-]+\.(png|jpg|jpeg|webp|gif)$/i.test(data.imagen)&&!data.imagen.includes('..')){
+  if(typeof data.imagen==='string'&&/^\/?assets\/uploads\/[a-zA-Z0-9_./-]+\.(png|jpg|jpeg|webp|gif)$/i.test(data.imagen)&&!data.imagen.includes('..')&&!data.texto.includes(']('+data.imagen+')')&&!data.texto.includes(']('+data.imagen.replace(/^\//,'')+')')){
    const img=document.createElement('img');img.src=data.imagen.replace(/^\//,'');img.alt=data.titulo||'Imagen ASECOR';img.className='cms-feature-image';wrapper.prepend(img);
   }
   const cards=page==='index'?article.querySelector('.cards'):null;
