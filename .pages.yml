@@ -2,6 +2,38 @@ media:
   input: assets/uploads
   output: /assets/uploads
 content:
+  - name: ajustes_imagenes
+    label: Ajustes de imágenes
+    type: file
+    path: content/imagenes.json
+    format: json
+    list: true
+    fields:
+      - name: imagen
+        label: Seleccionar imagen
+        type: image
+        required: true
+      - name: tamano
+        label: Tamaño
+        type: select
+        options:
+          - label: Pequeño
+            value: small
+          - label: Mediano
+            value: medium
+          - label: Grande
+            value: large
+      - name: alineacion
+        label: Alineación
+        type: select
+        options:
+          - label: Izquierda
+            value: left
+          - label: Centro
+            value: center
+          - label: Derecha
+            value: right
+
   - name: paginas
     label: Páginas adicionales
     type: file
