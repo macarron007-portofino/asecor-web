@@ -3,7 +3,7 @@ media:
   output: /assets/uploads
 content:
   - name: ajustes_imagenes
-    label: Ajustes de imágenes
+    label: '-Ajustes de imágenes ()'
     type: file
     path: content/imagenes.json
     format: json
@@ -37,7 +37,7 @@ content:
               label: Derecha
 
   - name: paginas
-    label: Páginas adicionales
+    label: '-Páginas adicionales ()'
     type: file
     path: content/paginas.json
     format: json
