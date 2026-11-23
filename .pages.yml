@@ -49,7 +49,452 @@ content:
         required: true
         description: Usa solo letras minúsculas, números y guiones. Ejemplo: prueba-1313.
         pattern:
-          regex: '^[a-z0-9]+(-[a-z0-9]+)*
+          regex: '^[a-z0-9]+(-[a-z0-9]+)*      - name: titulo
+        label: Título
+        type: string
+        required: true
+      - name: resumen
+        label: Resumen
+        type: text
+      - name: texto
+        label: Texto principal
+        type: rich-text
+      - name: imagen
+        label: Imagen
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+      - name: publicada
+        label: Publicada
+        type: boolean
+      - name: orden
+        label: Orden en el menú
+        type: number
+
+  - name: original_index
+    label: "Inicio"
+    type: file
+    path: content/originales/index.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_asociacion
+    label: "La asociación"
+    type: file
+    path: content/originales/asociacion.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_historia
+    label: "Historia"
+    type: file
+    path: content/originales/historia.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_agentes_de_salud
+    label: "Agentes de Salud"
+    type: file
+    path: content/originales/agentes-de-salud.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_educacion_sanitaria
+    label: "Educación sanitaria"
+    type: file
+    path: content/originales/educacion-sanitaria.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_apoyo_psicologico
+    label: "Apoyo psicológico"
+    type: file
+    path: content/originales/apoyo-psicologico.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_voluntariado
+    label: "Voluntariado"
+    type: file
+    path: content/originales/voluntariado.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_resultados
+    label: "Resultados"
+    type: file
+    path: content/originales/resultados.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_documentacion
+    label: "Documentación"
+    type: file
+    path: content/originales/documentacion.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_contacto
+    label: "Contacto"
+    type: file
+    path: content/originales/contacto.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+          message: 'Identificador no válido: utiliza solo minúsculas, números y guiones, sin espacios ni acentos.'
+      - name: titulo
+        label: Título
+        type: string
+        required: true
+      - name: resumen
+        label: Resumen
+        type: text
+      - name: texto
+        label: Texto principal
+        type: rich-text
+      - name: imagen
+        label: Imagen
+        type: image
+      - name: publicada
+        label: Publicada
+        type: boolean
+      - name: orden
+        label: Orden en el menú
+        type: number
+
+  - name: original_index
+    label: "Inicio"
+    type: file
+    path: content/originales/index.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_asociacion
+    label: "La asociación"
+    type: file
+    path: content/originales/asociacion.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_historia
+    label: "Historia"
+    type: file
+    path: content/originales/historia.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_agentes_de_salud
+    label: "Agentes de Salud"
+    type: file
+    path: content/originales/agentes-de-salud.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_educacion_sanitaria
+    label: "Educación sanitaria"
+    type: file
+    path: content/originales/educacion-sanitaria.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_apoyo_psicologico
+    label: "Apoyo psicológico"
+    type: file
+    path: content/originales/apoyo-psicologico.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_voluntariado
+    label: "Voluntariado"
+    type: file
+    path: content/originales/voluntariado.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_resultados
+    label: "Resultados"
+    type: file
+    path: content/originales/resultados.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_documentacion
+    label: "Documentación"
+    type: file
+    path: content/originales/documentacion.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+  - name: original_contacto
+    label: "Contacto"
+    type: file
+    path: content/originales/contacto.json
+    format: json
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Contenido
+        type: rich-text
+      - name: imagen
+        label: Imagen destacada
+        type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
+
+          message: 'Utiliza solo minúsculas, números y guiones.'
       - name: titulo
         label: Título
         type: string
