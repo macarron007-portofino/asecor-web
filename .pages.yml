@@ -47,10 +47,10 @@ content:
         label: Identificador (sin espacios ni acentos)
         type: string
         required: true
-        description: Usa solo letras minúsculas, números y guiones. Ejemplo: prueba-1313.
+        description: Obligatorio en minúsculas, sin espacios ni acentos. Ejemplo válido prueba-1313. No cambies este identificador si existen enlaces a la página.
         pattern:
           regex: '^[a-z0-9]+(-[a-z0-9]+)*$'
-          message: 'Solo minúsculas, números y guiones.'
+          message: 'No se puede guardar: el identificador solo admite letras minúsculas (a-z), números (0-9) y guiones (-). No admite mayúsculas, espacios ni acentos.'
       - name: titulo
         label: Título
         type: string
