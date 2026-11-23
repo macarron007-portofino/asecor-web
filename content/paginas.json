@@ -14,5 +14,13 @@
     "texto": "Prueba 1313",
     "publicada": true,
     "orden": 98
+  },
+  {
+    "slug": "prueba-pagina-adicional",
+    "titulo": "Página adicional de prueba",
+    "resumen": "Borrador para comprobar la gestión de páginas adicionales de ASECOR.",
+    "texto": "Esta página de prueba se puede editar desde Pages CMS.",
+    "publicada": false,
+    "orden": 100
   }
 ]
