@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "imagen": "/assets/uploads/Borrar_imagen_prueba.png",
+    "tamano": "small",
+    "alineacion": "center"
+  }
+]
