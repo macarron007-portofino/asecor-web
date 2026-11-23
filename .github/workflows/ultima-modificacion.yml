@@ -1,0 +1,47 @@
+name: Actualizar fechas de modificación
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/originales/*.json'
+      - 'content/paginas.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fechas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Registrar fecha del último cambio de contenido
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, subprocess, datetime
+          now=datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds').replace('+00:00','Z')
+          changed=subprocess.run(['git','diff','--name-only','HEAD^','HEAD','--','content/'],capture_output=True,text=True).stdout.splitlines()
+          if not changed:
+              changed=['content/paginas.json',*[str(p) for p in pathlib.Path('content/originales').glob('*.json')]]
+          for name in changed:
+              p=pathlib.Path(name)
+              if not p.exists() or p.suffix!='.json': continue
+              data=json.loads(p.read_text(encoding='utf-8'))
+              if name=='content/paginas.json':
+                  if not isinstance(data,list): continue
+                  for page in data:
+                      if isinstance(page,dict): page['ultima_modificacion']=now
+              elif isinstance(data,dict):
+                  data['ultima_modificacion']=now
+              else: continue
+              p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+      - name: Guardar fechas actualizadas
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content/originales/*.json content/paginas.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Actualizar fechas de modificación [skip ci]"
+            git push
+          fi
