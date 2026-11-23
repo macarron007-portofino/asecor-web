@@ -15,7 +15,7 @@
     if(res.ok){
       const data=await res.json();
       if(extra&&Array.isArray(data)){
-        const normalize=s=>String(s||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+        const normalize=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
         date=data.find(p=>normalize(p.slug||p.titulo)===normalize(extra))?.ultima_modificacion;
       }else if(!extra)date=data.ultima_modificacion;
     }
