@@ -1,4 +1,4 @@
-const asecorImageSettings=fetch('content/imagenes.json',{cache:'no-store'}).then(r=>r.ok?r.json():[]).catch(()=>[]);
+const asecorImageSettings=fetch('content/imagenes.json'+(location.search.includes('preview=')?'?v='+Date.now():''),{cache:'no-store'}).then(r=>r.ok?r.json():[]).catch(()=>[]);
 function asecorApplyImageSettings(root){
  asecorImageSettings.then(items=>{
   if(!Array.isArray(items))return;
