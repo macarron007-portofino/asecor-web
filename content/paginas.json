@@ -6,5 +6,13 @@
     "texto": "`Esta página se ha creado desde el panel de administración, sin utilizar código 1312`",
     "publicada": true,
     "orden": 99
+  },
+  {
+    "slug": "Prueba 1313",
+    "titulo": "Prueba 1313",
+    "resumen": "Prueba 1313",
+    "texto": "Prueba 1313",
+    "publicada": false,
+    "orden": 98
   }
 ]
