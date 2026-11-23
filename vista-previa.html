@@ -11,7 +11,8 @@ const originals=[['index','Inicio'],['asociacion','La asociación'],['historia',
 const sel=document.getElementById('page'),frame=document.getElementById('preview'),edit=document.getElementById('edit'),status=document.getElementById('status');
 for(const [slug,title] of originals){const o=new Option(title,slug);sel.add(o)}
 const originalSlugs=new Set(originals.map(x=>x[0]));
-async function loadExtras(){try{const r=await fetch('content/paginas.json',{cache:'no-store'});if(!r.ok)return;const pages=await r.json();for(const p of pages){if(p&&p.publicada===true&&/^[a-z0-9-]+$/.test(p.slug)){sel.add(new Option('Adicional: '+p.titulo,'extra:'+p.slug))}}}catch(e){}}
+const normalizePageSlug=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+async function loadExtras(){try{const r=await fetch('content/paginas.json?v='+Date.now(),{cache:'no-store'});if(!r.ok)return;const pages=await r.json();for(const p of pages){if(p&&p.publicada===true&&normalizePageSlug(p.slug)){sel.add(new Option('Adicional: '+p.titulo,'extra:'+normalizePageSlug(p.slug)))}}}catch(e){}}
 function update(){const value=sel.value;const extra=value.startsWith('extra:');const slug=extra?value.slice(6):value;if(!extra&&!originalSlugs.has(slug))return;const url=extra?'pagina.html?id='+encodeURIComponent(slug):slug+'.html';frame.src=url+(url.includes('?')?'&':'?')+'preview='+Date.now();edit.href=base+(extra?'paginas':'original_'+slug.replace(/-/g,'_'));status.textContent='Cargando…';}
 frame.addEventListener('load',()=>{status.textContent='Vista cargada · contenido disponible en GitHub Pages'});
 sel.addEventListener('change',update);
