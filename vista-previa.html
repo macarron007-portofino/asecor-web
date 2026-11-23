@@ -13,9 +13,9 @@ for(const [slug,title] of originals){const o=new Option(title,slug);sel.add(o)}
 const originalSlugs=new Set(originals.map(x=>x[0]));
 async function loadExtras(){try{const r=await fetch('content/paginas.json',{cache:'no-store'});if(!r.ok)return;const pages=await r.json();for(const p of pages){if(p&&p.publicada===true&&/^[a-z0-9-]+$/.test(p.slug)){sel.add(new Option('Adicional: '+p.titulo,'extra:'+p.slug))}}}catch(e){}}
 function update(){const value=sel.value;const extra=value.startsWith('extra:');const slug=extra?value.slice(6):value;if(!extra&&!originalSlugs.has(slug))return;const url=extra?'pagina.html?id='+encodeURIComponent(slug):slug+'.html';frame.src=url+(url.includes('?')?'&':'?')+'preview='+Date.now();edit.href=base+(extra?'paginas':'original_'+slug.replace(/-/g,'_'));status.textContent='Cargando…';}
-frame.addEventListener('load',()=>{status.textContent='Vista cargada · últimos cambios publicados'});
+frame.addEventListener('load',()=>{status.textContent='Vista cargada · contenido disponible en GitHub Pages'});
 sel.addEventListener('change',update);
-document.getElementById('refresh').addEventListener('click',update);
+document.getElementById('refresh').addEventListener('click',()=>{status.textContent='Solicitando contenido actualizado…';update();});
 document.getElementById('mobile').addEventListener('click',()=>document.getElementById('frame-wrap').classList.add('mobile'));
 document.getElementById('desktop').addEventListener('click',()=>document.getElementById('frame-wrap').classList.remove('mobile'));
 (async()=>{await loadExtras();const requested=new URLSearchParams(location.search).get('page');if(requested&&[...sel.options].some(x=>x.value===requested))sel.value=requested;else sel.value='historia';update()})();
