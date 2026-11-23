@@ -63,6 +63,10 @@ content:
       - name: imagen
         label: Imagen
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
       - name: publicada
         label: Publicada
         type: boolean
@@ -85,6 +89,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_asociacion
     label: "La asociación"
@@ -101,6 +109,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_historia
     label: "Historia"
@@ -117,6 +129,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_agentes_de_salud
     label: "Agentes de Salud"
@@ -133,6 +149,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_educacion_sanitaria
     label: "Educación sanitaria"
@@ -149,6 +169,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_apoyo_psicologico
     label: "Apoyo psicológico"
@@ -165,6 +189,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_voluntariado
     label: "Voluntariado"
@@ -181,6 +209,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_resultados
     label: "Resultados"
@@ -197,6 +229,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_documentacion
     label: "Documentación"
@@ -213,6 +249,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_contacto
     label: "Contacto"
@@ -229,6 +269,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
           message: 'Identificador no válido: utiliza solo minúsculas, números y guiones, sin espacios ni acentos.'
       - name: titulo
@@ -266,6 +310,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_asociacion
     label: "La asociación"
@@ -282,6 +330,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_historia
     label: "Historia"
@@ -298,6 +350,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_agentes_de_salud
     label: "Agentes de Salud"
@@ -314,6 +370,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_educacion_sanitaria
     label: "Educación sanitaria"
@@ -330,6 +390,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_apoyo_psicologico
     label: "Apoyo psicológico"
@@ -346,6 +410,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_voluntariado
     label: "Voluntariado"
@@ -362,6 +430,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_resultados
     label: "Resultados"
@@ -378,6 +450,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_documentacion
     label: "Documentación"
@@ -394,6 +470,10 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
 
   - name: original_contacto
     label: "Contacto"
@@ -410,3 +490,7 @@ content:
       - name: imagen
         label: Imagen destacada
         type: image
+      - name: ultima_modificacion
+        label: Última modificación (automática)
+        type: string
+        description: Fecha registrada automáticamente al guardar contenido en GitHub.
