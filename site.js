@@ -15,18 +15,6 @@ document.getElementById('menu-button')?.addEventListener('click',function(){cons
   }
   if(typeof data.texto!=='string')return;
   const wrapper=window.AsecorMedia.render(data.texto);
-  /* Original content renderer retained below for compatibility */
-  let list=null;
-  /* disabled legacy renderer */
-  for(const line of [] /* data.texto */.replace(/\r/g,'').split('\n')){
-   const t=line.trim();
-   if(!t){list=null;continue;}
-   const heading=t.match(/^(#{1,4})\s+(.+)$/);
-   if(heading){const el=document.createElement(heading[1].length<=2?'h2':'h3');el.textContent=heading[2];wrapper.append(el);list=null;continue;}
-   const bullet=t.match(/^[-*]\s+(.+)$/);
-   if(bullet){if(!list){list=document.createElement('ul');wrapper.append(list);}const li=document.createElement('li');li.textContent=bullet[1];list.append(li);continue;}
-   list=null;const p=document.createElement('p');p.textContent=t.replace(/^\x60|\x60$/g,'').replace(/^\*\*(.+)\*\*$/,'$1');wrapper.append(p);
-  }
   if(typeof data.imagen==='string'&&/^\/?assets\/uploads\/[a-zA-Z0-9_./-]+\.(png|jpg|jpeg|webp|gif)$/i.test(data.imagen)&&!data.imagen.includes('..')){
    const img=document.createElement('img');img.src=data.imagen.replace(/^\//,'');img.alt=data.titulo||'Imagen ASECOR';img.className='cms-feature-image';wrapper.prepend(img);
   }
