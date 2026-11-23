@@ -17,22 +17,24 @@ content:
         label: Tamaño
         type: select
         options:
-          - label: Pequeño
-            value: small
-          - label: Mediano
-            value: medium
-          - label: Grande
-            value: large
+          values:
+            - name: small
+              label: Pequeño
+            - name: medium
+              label: Mediano
+            - name: large
+              label: Grande
       - name: alineacion
         label: Alineación
         type: select
         options:
-          - label: Izquierda
-            value: left
-          - label: Centro
-            value: center
-          - label: Derecha
-            value: right
+          values:
+            - name: left
+              label: Izquierda
+            - name: center
+              label: Centro
+            - name: right
+              label: Derecha
 
   - name: paginas
     label: Páginas adicionales
