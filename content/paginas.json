@@ -19,7 +19,7 @@
     "slug": "prueba-pagina-adicional",
     "titulo": "Página adicional de prueba",
     "resumen": "Borrador para comprobar la gestión de páginas adicionales de ASECOR.",
-    "texto": "Esta página de prueba se puede editar desde Pages CMS.\n\n![Imagen de prueba](/assets/uploads/Borrar_imagen_prueba.png)\n\n![Ilustración de un corazón con un trazado de electrocardiograma](/assets/uploads/ilustracion-corazon-prueba.png)\n\n",
+    "texto": "Esta página de prueba se puede editar desde Pages CMS.\n\n![Ilustración de un corazón con un trazado de electrocardiograma](/assets/uploads/ilustracion-corazon-prueba.png)\n\n",
     "publicada": true,
     "orden": 100
   }
