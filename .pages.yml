@@ -1,0 +1,34 @@
+media:
+  input: assets/uploads
+  output: /assets/uploads
+content:
+  - name: paginas
+    label: Páginas adicionales
+    type: file
+    path: content/paginas.json
+    format: json
+    list: true
+    fields:
+      - name: slug
+        label: Identificador (sin espacios ni acentos)
+        type: string
+        required: true
+      - name: titulo
+        label: Título
+        type: string
+        required: true
+      - name: resumen
+        label: Resumen
+        type: text
+      - name: texto
+        label: Texto principal
+        type: rich-text
+      - name: imagen
+        label: Imagen
+        type: image
+      - name: publicada
+        label: Publicada
+        type: boolean
+      - name: orden
+        label: Orden en el menú
+        type: number
