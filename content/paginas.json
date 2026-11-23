@@ -4,7 +4,7 @@
     "titulo": "Página de prueba",
     "resumen": "Estamos probando el gestor de contenidos de ASECOR.",
     "texto": "`Esta página se ha creado desde el panel de administración, sin utilizar código`",
-    "publicada": false,
+    "publicada": true,
     "orden": 99
   }
 ]
