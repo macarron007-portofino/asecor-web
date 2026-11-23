@@ -12,7 +12,7 @@
     "titulo": "Prueba 1313",
     "resumen": "Prueba 1313",
     "texto": "Prueba 1313",
-    "publicada": false,
+    "publicada": true,
     "orden": 98
   }
 ]
