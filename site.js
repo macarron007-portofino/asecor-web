@@ -1,5 +1,5 @@
 document.getElementById('menu-button')?.addEventListener('click',function(){const n=document.getElementById('nav');const open=n.classList.toggle('open');this.setAttribute('aria-expanded',String(open));});
-(async()=>{try{const r=await fetch('content/paginas.json',{cache:'no-store'});if(!r.ok)return;const pages=(await r.json()).filter(p=>p.publicada===true&&/^[a-z0-9-]+$/.test(p.slug||'')).sort((a,b)=>(a.orden??999)-(b.orden??999));const nav=document.getElementById('nav');const cards=document.querySelector('.cards');for(const p of pages){const href='pagina.html?id='+encodeURIComponent(p.slug);const link=document.createElement('a');link.href=href;link.textContent=p.titulo;nav?.append(link);if(cards){const card=document.createElement('a');card.href=href;card.textContent=p.titulo;cards.append(card)}}}catch(e){console.warn('No se han cargado las páginas adicionales',e)}})();
+(async()=>{try{const r=await fetch('content/paginas.json'+(location.search.includes('preview=')?'?v='+Date.now():''),{cache:'no-store'});if(!r.ok)return;const pages=(await r.json()).filter(p=>p.publicada===true&&/^[a-z0-9-]+$/.test(p.slug||'')).sort((a,b)=>(a.orden??999)-(b.orden??999));const nav=document.getElementById('nav');const cards=document.querySelector('.cards');for(const p of pages){const href='pagina.html?id='+encodeURIComponent(p.slug);const link=document.createElement('a');link.href=href;link.textContent=p.titulo;nav?.append(link);if(cards){const card=document.createElement('a');card.href=href;card.textContent=p.titulo;cards.append(card)}}}catch(e){console.warn('No se han cargado las páginas adicionales',e)}})();
 
 (async function(){
  const article=document.querySelector('article[data-page]');
@@ -7,7 +7,7 @@ document.getElementById('menu-button')?.addEventListener('click',function(){cons
  const page=article.getAttribute('data-page');
  if(!/^[a-z0-9-]+$/.test(page))return;
  try{
-  const response=await fetch('content/originales/'+page+'.json',{cache:'no-store'});
+  const response=await fetch('content/originales/'+page+'.json'+(location.search.includes('preview=')?'?v='+Date.now():''),{cache:'no-store'});
   if(!response.ok)return;
   const data=await response.json();
   if(typeof data.titulo==='string'&&data.titulo.trim()){
